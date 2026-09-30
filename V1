@@ -1,0 +1,41 @@
+Función x <- robar
+	Definir x Como Real
+	x <- Aleatorio(1,10)
+	Si x>7 Entonces
+		x <- 0.5
+	FinSi
+FinFunción
+
+Algoritmo siete_y_medio
+	Definir jugador, repartidor, salir Como Real
+	jugador <- jugador+robar()
+	repartidor <- repartidor+robar()
+	Escribir 'tienes ', jugador
+	Escribir 'el tiene ', repartidor
+	Mientras salir==0 Hacer
+		Escribir 'quieres seguir?'
+		Escribir '0 es si, otra cosa es no'
+		Leer salir
+		Si salir==0 Entonces
+			jugador <- jugador+robar()
+			Escribir 'tienes ', jugador
+		FinSi
+		Si jugador>7.5 Entonces
+			salir <- 1
+		FinSi
+	FinMientras
+	salir <- 0
+	Mientras salir==0 Hacer
+		Si repartidor>7.5 O repartidor>jugador O jugador>7.5 O jugador=repartidor Entonces
+			salir <- 1
+		FinSi
+		Si salir==0 Entonces
+			repartidor <- repartidor+robar()
+			Escribir 'el tiene ', repartidor
+			Esperar 1 Segundos
+		FinSi
+	FinMientras
+	Limpiar Pantalla
+	Escribir 'tienes ', jugador
+	Escribir 'el tiene ', repartidor
+FinAlgoritmo
